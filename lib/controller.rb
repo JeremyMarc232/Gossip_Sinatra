@@ -10,7 +10,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/gossips/:id' do
-    erb :show, locals: {gossip_id: params['id']}
+    #erb :show, locals: {gossip_id: params['id']}
+    "<html><head><title>Gossip</title></head><body><h1>Auteur:  #{Gossip.find(params["id"]).author} Content: #{Gossip.find(params["id"]).content}</body></html>"
   end
 
   post '/gossips/new/' do
